@@ -9,7 +9,7 @@
 import {useTaskStore} from "~/stores/task.store"
 const store = useTaskStore();
 
-const handleSubmit = (task:any, cleanForm: ()=>void)=>{
+const handleSubmit = (task:any, cleanForm: ()=>void=()=>{})=>{
     if (store.taskToUpdate){
         store.editTask(store.taskToUpdate.id, task);
     }else{
@@ -17,7 +17,6 @@ const handleSubmit = (task:any, cleanForm: ()=>void)=>{
     }
     cleanForm();
 }
-
 onMounted(()=>{
     store.fetchTasks();
 })

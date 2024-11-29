@@ -1,6 +1,4 @@
 <script setup lang="ts">
-const config = useRuntimeConfig();
-
 import {useTaskStore} from "~/stores/task.store"
 const store = useTaskStore();
 const tasks = computed(()=>Object.groupBy(store.tasks, (t=>t.status)));

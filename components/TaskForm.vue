@@ -44,7 +44,7 @@ watch(
 const buttonText = computed(() => (props.taskToUpdate ? 'Guardar' : 'Crear'));
 
 const handleSubmit = () => {
-  emit('submit', task.value);
+  emit('submit', task.value, ()=>{task.value={}});
 };
 </script>
 

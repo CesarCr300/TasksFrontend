@@ -15,4 +15,5 @@ export default defineNuxtConfig({
   modules: [
     "@pinia/nuxt",
   ],
+  plugins: ["~/plugins/errorHandler.plugin.ts"],
 });
