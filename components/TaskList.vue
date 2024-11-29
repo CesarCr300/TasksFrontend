@@ -1,13 +1,15 @@
 <template class="task-list">
-    <h2 class="task-list__title">{{ title }}</h2>
-    <ul>
-        <li v-for="task in tasks" :key="task.id">
-            <h3>{{ task.title }}</h3>
-            <p>{{ task.description }}</p>
-            <button @click="$emit('selectToUpdate', task.id)">Actualizar</button>
-            <button @click="$emit('delete', task.id)">Eliminar</button>
-        </li>
-    </ul>
+    <div>
+        <h2 class="task-list__title">{{ title }}</h2>
+        <ul>
+            <li v-for="task in tasks" :key="task.id">
+                <h3>{{ task.title }}</h3>
+                <p>{{ task.description }}</p>
+                <button @click="$emit('selectToUpdate', task.id)">Actualizar</button>
+                <button @click="$emit('delete', task.id)">Eliminar</button>
+            </li>
+        </ul>
+    </div>
 </template>
 
 <script setup>
