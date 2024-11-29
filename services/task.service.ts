@@ -1,18 +1,25 @@
+import type { GeneralResponse } from "../generalResponse";
+
 export const useTaskService = () => {
-  const config = useRuntimeConfig();
-  const API_BASE = config.public.apiBaseURL;
+  const API_BASE = "http://localhost:4000";
 
   const get = async () => {
-    const response = await $fetch(`${API_BASE}/tasks`);
-    return response;
+    const response = (await $fetch(`${API_BASE}/tasks`)) as any;
+    return response as GeneralResponse<
+      { id: number; title: string; description: string }[]
+    >;
   };
 
   const create = async (task: { title: string; description: string }) => {
-    const response = await $fetch(`${API_BASE}/tasks`, {
+    const response = (await $fetch(`${API_BASE}/tasks`, {
       method: "POST",
       body: task,
-    });
-    return response;
+    })) as any;
+    return response as GeneralResponse<{
+      id: number;
+      title: string;
+      description: string;
+    }>;
   };
 
   const update = async (
@@ -37,6 +44,6 @@ export const useTaskService = () => {
     get,
     create,
     update,
-    remove
+    remove,
   };
 };

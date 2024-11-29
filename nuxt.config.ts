@@ -12,4 +12,7 @@ export default defineNuxtConfig({
       apiBaseURL: "http://localhost:4000",
     },
   },
+  modules: [
+    "@pinia/nuxt",
+  ],
 });
