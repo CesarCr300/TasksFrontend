@@ -21,6 +21,7 @@ const tasks = computed(()=>Object.groupBy(store.tasks, (t=>t.status)));
 <style scoped>
 .task-list-container {
     display: grid;
+    padding: 0 75px;
     grid-template-columns: repeat(3, 1fr);
     gap: 16px;
     height: 100vh;
@@ -33,6 +34,7 @@ const tasks = computed(()=>Object.groupBy(store.tasks, (t=>t.status)));
 
 @media (max-width: 768px) {
     .task-list-container {
+        padding: 0;
         grid-template-columns: 1fr;
     }
 }
