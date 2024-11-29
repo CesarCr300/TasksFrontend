@@ -87,7 +87,4 @@ const handleSubmit = () => {
   cursor: pointer;
   font-size: 16px;
 }
-
-.task-form__button:hover {
-}
 </style>

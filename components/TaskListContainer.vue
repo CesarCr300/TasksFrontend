@@ -36,6 +36,7 @@ const tasks = computed(()=>Object.groupBy(store.tasks, (t=>t.status)));
     .task-list-container {
         padding: 0;
         grid-template-columns: 1fr;
+        height: auto;
     }
 }
 </style>
