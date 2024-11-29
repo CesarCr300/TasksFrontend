@@ -5,6 +5,7 @@
             <h3>{{ task.title }}</h3>
             <p>{{ task.description }}</p>
             <button @click="$emit('delete', task.id)">Eliminar</button>
+            <button @click="$emit('selectToUpdate', task.id)">Actualizar</button>
         </li>
     </ul>
 </template>
@@ -15,7 +16,7 @@ const props = defineProps({
     tasks: Array,
     status: String
 })
-const emit = defineEmits(['delete']);
+const emit = defineEmits(['delete','selectToUpdate']);
 
 const taskFiltered = computed(()=>{
     return props.tasks.filter(task=>task.status === props.status)
