@@ -10,3 +10,9 @@ export enum TaskStatusEnum {
   IN_PROGRESS = "in-progress",
   COMPLETED = "completed",
 }
+
+export const taskStatusEnumTranslation = {
+  [TaskStatusEnum.PENDING]: "Pendiente",
+  [TaskStatusEnum.IN_PROGRESS]: "En progreso",
+  [TaskStatusEnum.COMPLETED]: "Completo",
+};

@@ -4,8 +4,8 @@
         <li v-for="task in tasks" :key="task.id">
             <h3>{{ task.title }}</h3>
             <p>{{ task.description }}</p>
-            <button @click="$emit('delete', task.id)">Eliminar</button>
             <button @click="$emit('selectToUpdate', task.id)">Actualizar</button>
+            <button @click="$emit('delete', task.id)">Eliminar</button>
         </li>
     </ul>
 </template>
