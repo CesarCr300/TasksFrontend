@@ -7,13 +7,7 @@ export default defineNuxtConfig({
       title: "My TODO App",
     },
   },
-  runtimeConfig: {
-    public: {
-      apiBaseURL: "http://localhost:4000",
-    },
-  },
-  modules: [
-    "@pinia/nuxt",
-  ],
+  runtimeConfig: {},
+  modules: ["@pinia/nuxt"],
   plugins: ["~/plugins/errorHandler.plugin.ts"],
 });
