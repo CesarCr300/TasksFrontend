@@ -31,6 +31,7 @@ export const useTaskStore = defineStore("tasks", {
     async removeTask(id: number) {
       await useTaskService().remove(id);
       this.tasks = this.tasks.filter((t) => t.id !== id);
+      if (this.taskToUpdate?.id === id) this.cleanTaskToUpdate();
     },
     setTaskToUpdate(id: number) {
       this.taskToUpdate = this.tasks.find((t) => t.id === id) || undefined;
