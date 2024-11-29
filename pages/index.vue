@@ -8,12 +8,13 @@
 import {useTaskStore} from "~/stores/task.store"
 const store = useTaskStore();
 
-const handleSubmit = (task:any)=>{
+const handleSubmit = (task:any, cleanForm: ()=>void)=>{
     if (store.taskToUpdate){
         store.editTask(store.taskToUpdate.id, task);
     }else{
         store.addTask(task);
     }
+    cleanForm();
 }
 
 onMounted(()=>{
